@@ -146,3 +146,12 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+/*
+    pcl::rad2deg(float alpha) : 弧度到角度
+    pcl::deg2rad(float alpha) : 角度到弧度
+    pcl::normAngle(float alpha) : 正则化角度在 (-PI, PI) 之间
+    pcl::compute3DCentroid(const pcl::PointCloud<PointT> &cloud, Eigen::Matrix<Scalar, 4, 1> &centroid) : 计算给定一群点的 3D 中心点
+    pcl::computeCovarianceMatrix(const pcl::PointCloud<PointT> &cloud, const Eigen::Matrix< Scalar, 4, 1 > &centroid, Eigen::Matrix< Scalar, 3, 3 > &covariance_matrix) : 计算给定的三维点云的协方差矩阵
+*/
+

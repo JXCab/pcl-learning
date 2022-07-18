@@ -15,13 +15,13 @@ int main(int argc, char **argv)
 {
     //实例化的模板类PointCloud  每一个点的类型都设置为pcl::PointXYZ
     /*************************************************
- 点PointXYZ类型对应的数据结构
-    Structure PointXYZ{
-     float x;
-     float y;
-     float z;
-    };
-**************************************************/
+     点PointXYZ类型对应的数据结构
+        Structure PointXYZ{
+        float x;
+        float y;
+        float z;
+        };
+    **************************************************/
     pcl::PointCloud<pcl::PointXYZ> cloud;
 
     // 创建点云  并设置适当的参数（width height is_dense）
@@ -30,7 +30,8 @@ int main(int argc, char **argv)
     cloud.is_dense = false;                          //不是稠密型的
     cloud.points.resize(cloud.width * cloud.height); //点云总数大小
                                                      //用随机数的值填充PointCloud点云对象
-    for (size_t i = 0; i < cloud.points.size(); ++i)
+    // for (size_t i = 0; i < cloud.points.size(); ++i)
+    for (size_t i = 0; i < cloud.size(); ++i)
     {
         cloud.points[i].x = 1024 * rand() / (RAND_MAX + 1.0f);
         cloud.points[i].y = 1024 * rand() / (RAND_MAX + 1.0f);

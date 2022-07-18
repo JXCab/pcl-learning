@@ -13,7 +13,7 @@
 
 int main(int argc, char **argv)
 {
-    std::cout << "argc: " << argc<<std::endl;
+    std::cout << "argc: " << argc << std::endl;
     std::cout << "argv: " << argv[1] << std::endl;
     if (argc != 2) //提示如果执行可执行文件输入两个参数 -f 或者-p
     {
@@ -64,10 +64,10 @@ int main(int argc, char **argv)
             n_cloud_b.points[i].normal[2] = 1024 * rand() / (RAND_MAX + 1.0f);
         }
     /*******************************************************************
-定义了连接点云会用到的5个点云对象：3个输入（cloud_a cloud_b 和n_cloud_b）
-两个输出（cloud_c  n_cloud_c）然后就是为两个输入点云cloud_a和 cloud_b或者cloud_a 和n_cloud_b填充数据  
+    定义了连接点云会用到的5个点云对象：3个输入（cloud_a cloud_b 和n_cloud_b）
+    两个输出（cloud_c  n_cloud_c）然后就是为两个输入点云cloud_a和 cloud_b或者cloud_a 和n_cloud_b填充数据  
 
-********************************************************************/
+    ********************************************************************/
     //输出Cloud A
     std::cerr << "Cloud A: " << std::endl;
     for (size_t i = 0; i < cloud_a.points.size(); ++i)
@@ -79,7 +79,8 @@ int main(int argc, char **argv)
             std::cerr << "    " << cloud_b.points[i].x << " " << cloud_b.points[i].y << " " << cloud_b.points[i].z << std::endl;
     else //输出n_Cloud_b
         for (size_t i = 0; i < n_cloud_b.points.size(); ++i)
-            std::cerr << "    " << n_cloud_b.points[i].normal[0] << " " << n_cloud_b.points[i].normal[1] << " " << n_cloud_b.points[i].normal[2] << std::endl;
+            // std::cerr << "    " << n_cloud_b.points[i].normal[0] << " " << n_cloud_b.points[i].normal[1] << " " << n_cloud_b.points[i].normal[2] << std::endl;
+            std::cerr << "    " << n_cloud_b.points[i].normal_x << " " << n_cloud_b.points[i].normal_y << " " << n_cloud_b.points[i].normal_z << std::endl;
 
     // Copy the point cloud data
     if (strcmp(argv[1], "-p") == 0)
